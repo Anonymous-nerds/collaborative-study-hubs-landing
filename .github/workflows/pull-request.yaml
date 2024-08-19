@@ -1,0 +1,97 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+    # paths: #for choosing the file i want
+    #   - filename
+  # workflow_dispatch:
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup Nodejs
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
+          cache: "npm"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run Linting
+      # - name: Run linting
+      #   run: npm run lint
+
+      # # Run tests
+      # - name: Run tests
+      #   run: npm test
+#////////////////////////// Private Repos ///////////////////////////
+
+# name: Merge
+
+# permissions:
+#   contents: write
+
+# on:
+#   push:
+#     branches:
+#       - main
+#     # paths: #for choosing the file i want
+#     #   - filename
+#   # workflow_dispatch:
+
+# jobs:
+#   merge:
+#     runs-on: ubuntu-latest
+
+#     defaults:
+#       run:
+#         working-directory: ./
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       # Setup Nodejs
+#       - name: Setup Node.js 18
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: "18.x"
+#           cache: "npm"
+
+#       # Install dependencies
+#       - name: Install dependencies
+#         run: npm install
+
+#       # Run Linting
+#       # - name: Run linting
+#       #   run: npm run lint
+
+#       # # Run tests
+#       # - name: Run tests
+#       #   run: npm test
+
+#       - name: Configure Git
+#         run: |
+#           git config user.email "yakubuanas04@gmail.com"
+#           git config user.name "@github-ci"
+#           npm version --patch --message "Bump version to %s"
+
+#       - name: Push Changes
+#         env:
+#           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+#         run: |
+#           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/anasyakubu/anasyakubu-cms-backend.git
+#           git push
+#           git push --follow-tags

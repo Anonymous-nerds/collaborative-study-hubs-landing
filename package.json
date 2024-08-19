@@ -1,0 +1,23 @@
+{
+  "name": "collaborative-study-hubs-landing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:js": "eslint **/*.{js,html}",
+    "lint:css": "stylelint **/*.css",
+    "lint": "npm run lint:js && npm run lint:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-html": "^8.1.1",
+    "globals": "^15.9.0",
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}
