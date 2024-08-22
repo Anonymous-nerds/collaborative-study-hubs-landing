@@ -632,7 +632,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .untree_co-hero {
   position: relative; }
   .untree_co-hero, .untree_co-hero > .container > .row {
-    padding: 6rem 0; }
+    padding: 7rem 0; }
   @media (max-width: 991.98px) {
     .untree_co-hero {
       text-align: center; } }
@@ -673,7 +673,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     .untree_co-section {
       padding: 50px 0; } }
   .untree_co-section .heading {
-    font-size: 38px;
+    font-size: 30px;
     color: #000000;
     font-weight: 600; }
     .untree_co-section .heading strong {
